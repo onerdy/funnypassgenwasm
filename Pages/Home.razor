@@ -1,0 +1,37 @@
+﻿@page "/"
+
+@using funnypassgenwasm.Models
+@using funnypassgenwasm.Services
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.<br />
+<br />
+@password
+
+@code
+{
+    string password = "";
+
+    PasswordOptions passwordOptions = new PasswordOptions
+        {
+            NumberOfWords = 3,
+            MinNumberOfWords = 2,
+            MaxNumberOfWords = 6,
+            SeparatorChar = "-",
+            Capitalize = true,
+            AddNumber = true
+        };
+
+    protected override void OnInitialized()
+    {
+        UpdatePassword();
+    }
+
+    private void UpdatePassword()
+    {
+        password = GeneratorService.GeneratePassword(passwordOptions);
+    }
+}
