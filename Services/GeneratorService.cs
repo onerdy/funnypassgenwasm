@@ -57,7 +57,6 @@ namespace funnypassgenwasm.Services
             "fugly",
             "genital",
             "gonads",
-            "gonorrehea",
             "lollygag",
             "lube",
             "herpes",

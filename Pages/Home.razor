@@ -1,15 +1,90 @@
 ﻿@page "/"
-
 @using funnypassgenwasm.Models
 @using funnypassgenwasm.Services
+@using funnypassgenwasm.Components
 
-<PageTitle>Home</PageTitle>
+<MudCard Elevation="10" Class="mt-1" Style="width:325px">
+    <MudCardContent>
+        <MudStack>
+            <MudTextField T="string"
+                            Variant="Variant.Outlined"
+                            Margin="Margin.Dense"
+                            Value="@password"
+                            ReadOnly="true"
+                            AutoGrow>
+            </MudTextField>
+            <MudStack Row="true">
+                <MudSpacer />
+                <CopyToClipboard TextToCopy="@password" />
+                <MudIconButton Icon="@Icons.Material.Filled.Refresh"
+                                Color="Color.Primary"
+                                Variant="Variant.Filled"
+                                Style="@($"color: {MyMudThemeProvider.MyTheme.PaletteLight.Secondary}")"
+                                OnClick="@(()=>
+                                        {
+                                        UpdatePassword();
+                                        })" />
 
-<h1>Hello, world!</h1>
+            </MudStack>
+        </MudStack>
+    </MudCardContent>
+    </MudCard>
 
-Welcome to your new app.<br />
-<br />
-<MudText>@password</MudText>
+    <MudText Class="mt-4">Number of words: @passwordOptions.NumberOfWords</MudText>
+    <MudSlider T="int"
+               Value="passwordOptions.NumberOfWords"
+               ValueChanged="@((int newValue)=>
+                                {
+                                passwordOptions.NumberOfWords = newValue;
+                                UpdatePassword();
+                                })"
+                Min=passwordOptions.MinNumberOfWords
+                Max=passwordOptions.MaxNumberOfWords
+                Style="width:250px"
+                Variant="Variant.Filled"/>
+    <MudStack Row="true">
+       <MudText Class="mt-4">Word Separator:</MudText>
+        <MudTextField T="string"
+                        Value="passwordOptions.SeparatorChar"
+                        MaxLength="1"
+                        Variant="Variant.Outlined"
+                        Style="width:45px;height:25px; margin-top:10px"
+                        Margin="Margin.Dense"
+                        Immediate="true"
+                        ValueChanged="@((string newValue)=>
+                                        {
+                                        passwordOptions.SeparatorChar = newValue;                                        
+                                        UpdatePassword();
+                                        })" />
+    </MudStack>
+    <MudStack Row="true" Class="mt-4">
+        <MudStack Spacing="1">
+            <MudText>Capitalize?</MudText>
+            <MudCheckBox Color="Color.Primary"
+                            Size="Size.Large"
+                            Dense="true"
+                            Value="passwordOptions.Capitalize"
+                            Style="margin-left:-5px"
+                            ValueChanged="@((bool newValue)=>
+                                        {
+                                        passwordOptions.Capitalize = newValue;
+                                        UpdatePassword();
+                                        })" />
+        </MudStack>
+        <MudStack Spacing="1">
+            <MudText>Add number?</MudText>
+            <MudCheckBox Color="Color.Primary"
+                            Size="Size.Large"
+                            Dense="true"
+                            Value="passwordOptions.AddNumber"
+                            Style="margin-left:-5px"
+                            ValueChanged="@((bool newValue)=>
+                                        {
+                                        passwordOptions.AddNumber = newValue;
+                                        UpdatePassword();
+                                        })" />
+        </MudStack>
+    </MudStack>
 
 @code
 {
