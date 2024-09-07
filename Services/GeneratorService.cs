@@ -69,7 +69,6 @@ namespace funnypassgenwasm.Services
             "malarkey",
             "milf",
             "moist",
-            "munter",
             "nasty",
             "nincompoop",
             "ninnymuggins",

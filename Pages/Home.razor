@@ -48,7 +48,7 @@
                         Value="passwordOptions.SeparatorChar"
                         MaxLength="1"
                         Variant="Variant.Outlined"
-                        Style="width:45px;height:25px; margin-top:10px"
+                        Style="width:45px; height:25px; margin-top:10px;"
                         Margin="Margin.Dense"
                         Immediate="true"
                         ValueChanged="@((string newValue)=>
@@ -92,7 +92,7 @@
 
     PasswordOptions passwordOptions = new PasswordOptions
         {
-            NumberOfWords = 3,
+            NumberOfWords = 2,
             MinNumberOfWords = 2,
             MaxNumberOfWords = 6,
             SeparatorChar = "-",
