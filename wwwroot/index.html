@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height: 100%; background-image: linear-gradient(white 150px, grey); ">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Funny Password Generator</title>
+    <title>PassGen.lol | Funny Password Generator</title>
     <base href="/" />
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="loader.css" rel="stylesheet" />
     <link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet" />
     <!-- If you add any scoped CSS files, uncomment the following to load them
     <link href="funnypassgenwasm.styles.css" rel="stylesheet" /> -->
 </head>
 
-<body style="background-color:lightgray;">
+<body style="height:100%; background-color: #0000">
 
     <div id="app">
-        <img src="SpinningLock.gif" />
-        <p>Loading funny passwords...</p>
+        <img src="eggman.png" style="position: absolute; top: 61px; left: 75px;" />
+        <div class="loader" style="position: absolute; top: 0; left: 0;"></div>
     </div>
 
     <div id="blazor-error-ui">

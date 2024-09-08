@@ -1,19 +1,20 @@
 ﻿@inherits LayoutComponentBase
 @using funnypassgenwasm.Components
 
-<PageTitle>Funny Password Generator</PageTitle>
+<PageTitle>PassGen.lol</PageTitle>
 
 <MyMudThemeProvider />
 
-<div class="page mud-layout" >
+<div class="page mud-layout">
     <main>
-        <MudPaper Elevation="10" Square="true" Style="@($"background-color:{MyMudThemeProvider.MyTheme.PaletteLight.Primary};")">
-            <MudStack Row="true">
-                <MudImage Src="Eggman128.png"></MudImage>
-                <MudStack>
-                    <MudText Typo="Typo.h5" Color="Color.Secondary">Funny</MudText>
-                    <MudText Typo="Typo.h5" Color="Color.Secondary">Password</MudText>
-                    <MudText Typo="Typo.h5" Color="Color.Secondary">Generator</MudText>
+        <MudPaper Elevation="10" Square="true" Style="background-color: #252525; border-color: #5E8A1D; border-bottom-width: 5px;">
+            <MudStack Row="true" Spacing="0">
+                <MudImage Src="eggman.png" Width="100" Height="128" Style="padding:5px" Alt="Site Logo"></MudImage>
+                <MudStack Spacing="0" Style="margin-left: 5px;">
+                    <MudSpacer />
+                    <MudText Typo="Typo.h3" Color="Color.Secondary">PassGen.lol</MudText>
+                    <MudText Typo="Typo.h6" Color="Color.Secondary">Funny Password Generator</MudText>
+                    <MudSpacer />
                 </MudStack>
             </MudStack>
         </MudPaper>

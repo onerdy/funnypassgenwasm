@@ -93,6 +93,7 @@ namespace funnypassgenwasm.Services
             "smorgasboard",
             "snockered",
             "snollygoster",
+            "sphincter",
             "stanky",
             "stripclub",
             "taint",
