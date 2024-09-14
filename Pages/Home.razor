@@ -3,24 +3,20 @@
 @using funnypassgenwasm.Services
 @using funnypassgenwasm.Components
 
-<MudCard Elevation="10" Class="mt-1" Style="width:325px">
+<MudCard Elevation="10" Class="mt-1" Style="width:350px; background-image: linear-gradient(white, lightgrey); border-radius:10px;">
     <MudCardContent>
         <MudStack>
-            <MudTextField T="string"
-                            Variant="Variant.Outlined"
-                            Margin="Margin.Dense"
-                            Value="@password"
-                            ReadOnly="true"
-                            Typo="Typo.h5"
-                            AutoGrow>
-            </MudTextField>
+            <MudText Typo="Typo.h5"
+                     Style="@($"color: {MyMudThemeProvider.MyTheme.PaletteLight.Tertiary};  padding:10px; height:90px; background-color: white; border-radius:10px; border-width:2px; border-color:purple;")">
+                     @password
+            </MudText>
             <MudStack Row="true">
                 <MudSpacer />
                 <CopyToClipboard TextToCopy="@password" />
                 <MudIconButton Icon="@Icons.Material.Filled.Refresh"
                                 Color="Color.Primary"
                                 Variant="Variant.Filled"
-                                Style="@($"color: {MyMudThemeProvider.MyTheme.PaletteLight.Secondary}")"
+                                Style="color:white"
                                 OnClick="@(()=>
                                         {
                                         UpdatePassword();
@@ -28,8 +24,7 @@
 
             </MudStack>
         </MudStack>
-    </MudCardContent>
-    </MudCard>
+
 
     <MudText Class="mt-4">Number of words: @passwordOptions.NumberOfWords</MudText>
     <MudSlider T="int"
@@ -85,17 +80,23 @@
                                         UpdatePassword();
                                         })" />
         </MudStack>
-    </MudStack><br />
-<MudButton StartIcon="@Icons.Material.Filled.AttachMoney"
-           Variant="Variant.Filled"
-           Color="Color.Primary"
-           Href="https://buy.stripe.com/3cs5lmgrpfqb7Vm3cd"
-           Target="_blank"
-           Rel="noreferrer noopener"
-           Style="@($"color: {MyMudThemeProvider.MyTheme.PaletteLight.Secondary}")">
-    Donate
-</MudButton>
-<MudText>Did you have a good laugh?<br />Consider supporting the site.</MudText>
+    </MudStack>
+        <br />
+        <MudStack Row="true">
+            <MudText>Did you have a good laugh? Consider supporting the site.</MudText>
+            <MudButton 
+                       Variant="Variant.Filled"
+                       Color="Color.Primary"
+                       Href="https://buy.stripe.com/3cs5lmgrpfqb7Vm3cd"
+                       Target="_blank"
+                       Rel="noreferrer noopener"
+                       Style="color: white; width:150px; padding:0px;">
+                $ Donate
+            </MudButton>
+        </MudStack>
+
+    </MudCardContent>
+</MudCard>
 
 
 @code
@@ -104,7 +105,7 @@
 
     PasswordOptions passwordOptions = new PasswordOptions
         {
-            NumberOfWords = 2,
+            NumberOfWords = 3,
             MinNumberOfWords = 2,
             MaxNumberOfWords = 4,
             SeparatorChar = "-",
