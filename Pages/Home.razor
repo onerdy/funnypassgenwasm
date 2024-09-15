@@ -7,8 +7,8 @@
     <MudCardContent>
         <MudStack>
             <MudText Typo="Typo.h5"
-                     Style="@($"color: {MyMudThemeProvider.MyTheme.PaletteLight.Tertiary}; font-weight: 700; padding:10px; height:90px; background-color: white; border-radius:10px; border-width:2px; border-color:purple;")">
-                     @password
+                     Style="@($"color: {MyMudThemeProvider.MyTheme.PaletteLight.Tertiary}; font-weight: 700; height: 120px; padding: 10px; background-color: white; border-radius:10px; border-width:2px; border-color:purple;")">
+                @password
             </MudText>
             <MudStack Row="true">
                 <MudSpacer />
@@ -44,7 +44,7 @@
                         Value="passwordOptions.SeparatorChar"
                         MaxLength="1"
                         Variant="Variant.Outlined"
-                        Style="width:45px; height:25px; margin-top:10px;"
+                        Style="width:45px; height:25px; margin-top:10px; background-color:white; border-radius: 5px;"
                         Margin="Margin.Dense"
                         Immediate="true"
                         ValueChanged="@((string newValue)=>
