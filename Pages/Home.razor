@@ -6,10 +6,15 @@
 <MudCard Elevation="10" Class="mt-1" Style="width:350px; background-image: linear-gradient(white, lightgrey); border-radius:10px;">
     <MudCardContent>
         <MudStack>
-            <MudText Typo="Typo.h5"
-                     Style="@($"color: {MyMudThemeProvider.MyTheme.PaletteLight.Tertiary}; font-weight: 700; height: 120px; padding: 10px; background-color: white; border-radius:10px; border-width:2px; border-color:purple;")">
-                @password
-            </MudText>
+            <MudTextField T="string"
+                          Variant="Variant.Outlined"
+                          Margin="Margin.Dense"
+                          Value="@password"
+                          ReadOnly="true"
+                          Typo="Typo.h5"                          
+                          Lines="3"
+                          Style="@($"color: {MyMudThemeProvider.MyTheme.PaletteLight.Tertiary}; font-weight: 700; background-color: white; border-radius:10px; border-width:2px; border-color:purple;")">
+            </MudTextField>
             <MudStack Row="true">
                 <MudSpacer />
                 <CopyToClipboard TextToCopy="@password" />
